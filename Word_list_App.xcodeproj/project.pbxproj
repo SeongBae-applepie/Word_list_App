@@ -13,6 +13,14 @@
 		0C618D862A138B6000A6D186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C618D852A138B6000A6D186 /* Preview Assets.xcassets */; };
 		0C618D882A138B6000A6D186 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D872A138B6000A6D186 /* Persistence.swift */; };
 		0C618D8B2A138B6000A6D186 /* Word_list_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D892A138B6000A6D186 /* Word_list_App.xcdatamodeld */; };
+		0C618D942A138BAC00A6D186 /* Word_list_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D932A138BAC00A6D186 /* Word_list_Cell.swift */; };
+		0C618D962A138BD800A6D186 /* Word_Detail_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D952A138BD800A6D186 /* Word_Detail_View.swift */; };
+		0C618D982A138BEE00A6D186 /* Word_Add_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D972A138BEE00A6D186 /* Word_Add_View.swift */; };
+		0C618D9A2A138BFA00A6D186 /* Word_Edit_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D992A138BFA00A6D186 /* Word_Edit_View.swift */; };
+		0C618D9C2A138C3B00A6D186 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618D9B2A138C3B00A6D186 /* Words.swift */; };
+		0C618D9F2A138C8200A6D186 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0C618D9E2A138C8200A6D186 /* Realm */; };
+		0C618DA12A138C8200A6D186 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C618DA02A138C8200A6D186 /* RealmSwift */; };
+		0C618DA32A138CC800A6D186 /* Word_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,12 @@
 		0C618D852A138B6000A6D186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C618D872A138B6000A6D186 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0C618D8A2A138B6000A6D186 /* Word_list_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Word_list_App.xcdatamodel; sourceTree = "<group>"; };
+		0C618D932A138BAC00A6D186 /* Word_list_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_list_Cell.swift; sourceTree = "<group>"; };
+		0C618D952A138BD800A6D186 /* Word_Detail_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_Detail_View.swift; sourceTree = "<group>"; };
+		0C618D972A138BEE00A6D186 /* Word_Add_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_Add_View.swift; sourceTree = "<group>"; };
+		0C618D992A138BFA00A6D186 /* Word_Edit_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_Edit_View.swift; sourceTree = "<group>"; };
+		0C618D9B2A138C3B00A6D186 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C618DA12A138C8200A6D186 /* RealmSwift in Frameworks */,
+				0C618D9F2A138C8200A6D186 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +71,15 @@
 		0C618D7D2A138B5F00A6D186 /* Word_list_App */ = {
 			isa = PBXGroup;
 			children = (
+				0C618D922A138B7E00A6D186 /* VIewModel */,
+				0C618D912A138B7700A6D186 /* View */,
 				0C618D7E2A138B5F00A6D186 /* Word_list_AppApp.swift */,
 				0C618D802A138B5F00A6D186 /* ContentView.swift */,
 				0C618D822A138B6000A6D186 /* Assets.xcassets */,
 				0C618D872A138B6000A6D186 /* Persistence.swift */,
 				0C618D892A138B6000A6D186 /* Word_list_App.xcdatamodeld */,
 				0C618D842A138B6000A6D186 /* Preview Content */,
+				0C618D9B2A138C3B00A6D186 /* Words.swift */,
 			);
 			path = Word_list_App;
 			sourceTree = "<group>";
@@ -71,6 +90,25 @@
 				0C618D852A138B6000A6D186 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0C618D912A138B7700A6D186 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C618D932A138BAC00A6D186 /* Word_list_Cell.swift */,
+				0C618D952A138BD800A6D186 /* Word_Detail_View.swift */,
+				0C618D972A138BEE00A6D186 /* Word_Add_View.swift */,
+				0C618D992A138BFA00A6D186 /* Word_Edit_View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C618D922A138B7E00A6D186 /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */,
+			);
+			path = VIewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +127,10 @@
 			dependencies = (
 			);
 			name = Word_list_App;
+			packageProductDependencies = (
+				0C618D9E2A138C8200A6D186 /* Realm */,
+				0C618DA02A138C8200A6D186 /* RealmSwift */,
+			);
 			productName = Word_list_App;
 			productReference = 0C618D7B2A138B5F00A6D186 /* Word_list_App.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 0C618D722A138B5F00A6D186;
+			packageReferences = (
+				0C618D9D2A138C8200A6D186 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 0C618D7C2A138B5F00A6D186 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,10 +188,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C618D942A138BAC00A6D186 /* Word_list_Cell.swift in Sources */,
 				0C618D882A138B6000A6D186 /* Persistence.swift in Sources */,
+				0C618DA32A138CC800A6D186 /* Word_ViewModel.swift in Sources */,
+				0C618D9A2A138BFA00A6D186 /* Word_Edit_View.swift in Sources */,
 				0C618D8B2A138B6000A6D186 /* Word_list_App.xcdatamodeld in Sources */,
+				0C618D962A138BD800A6D186 /* Word_Detail_View.swift in Sources */,
 				0C618D812A138B5F00A6D186 /* ContentView.swift in Sources */,
+				0C618D9C2A138C3B00A6D186 /* Words.swift in Sources */,
 				0C618D7F2A138B5F00A6D186 /* Word_list_AppApp.swift in Sources */,
+				0C618D982A138BEE00A6D186 /* Word_Add_View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +398,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C618D9D2A138C8200A6D186 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C618D9E2A138C8200A6D186 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C618D9D2A138C8200A6D186 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		0C618DA02A138C8200A6D186 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C618D9D2A138C8200A6D186 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0C618D892A138B6000A6D186 /* Word_list_App.xcdatamodeld */ = {
