@@ -63,7 +63,11 @@ struct Word_Edit_View: View {
                 //번역 버튼
                 HStack(alignment: .center){
                     Button("번역"){
-                        
+                        Task{
+                            
+                            eng = try await PapagoNetworkManager.shared.requestTranslate(sourceString: kor, target: "en")
+                            
+                        }
                         
                     }
                     .padding()
