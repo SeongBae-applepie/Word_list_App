@@ -21,6 +21,7 @@
 		0C618D9F2A138C8200A6D186 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0C618D9E2A138C8200A6D186 /* Realm */; };
 		0C618DA12A138C8200A6D186 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C618DA02A138C8200A6D186 /* RealmSwift */; };
 		0C618DA32A138CC800A6D186 /* Word_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */; };
+		0C618DA52A1396C700A6D186 /* PapagoNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618DA42A1396C700A6D186 /* PapagoNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		0C618D992A138BFA00A6D186 /* Word_Edit_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_Edit_View.swift; sourceTree = "<group>"; };
 		0C618D9B2A138C3B00A6D186 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ViewModel.swift; sourceTree = "<group>"; };
+		0C618DA42A1396C700A6D186 /* PapagoNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */,
+				0C618DA42A1396C700A6D186 /* PapagoNetworkManager.swift */,
 			);
 			path = VIewModel;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				0C618D9A2A138BFA00A6D186 /* Word_Edit_View.swift in Sources */,
 				0C618D8B2A138B6000A6D186 /* Word_list_App.xcdatamodeld in Sources */,
 				0C618D962A138BD800A6D186 /* Word_Detail_View.swift in Sources */,
+				0C618DA52A1396C700A6D186 /* PapagoNetworkManager.swift in Sources */,
 				0C618D812A138B5F00A6D186 /* ContentView.swift in Sources */,
 				0C618D9C2A138C3B00A6D186 /* Words.swift in Sources */,
 				0C618D7F2A138B5F00A6D186 /* Word_list_AppApp.swift in Sources */,

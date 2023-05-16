@@ -10,6 +10,7 @@ import SwiftUI
 struct Word_Add_View: View {
     
     @EnvironmentObject var Word_View_Model: Word_ViewModel
+    @EnvironmentObject var papago : PapagoNetworkManager
     
     @State private var kor : String = ""
     
@@ -33,6 +34,12 @@ struct Word_Add_View: View {
                             .onAppear(){
                                 kor = words.kor
                             }
+//                            .onChange(of: kor){
+//                                value in
+//                                Task{
+//                                    eng = try await PapagoNetworkManager.shared.requestTranslate(sourceString: value, target: "en")
+//                                }
+//                            }
                             .frame(height:35)
                             .border(Color.black)
                             .multilineTextAlignment(.leading)
@@ -45,9 +52,9 @@ struct Word_Add_View: View {
                     HStack{
                         Text("영어 : ")
                         TextEditor(text:  $eng)
-                            .onAppear(){
-                                eng = words.eng
-                            }
+//                            .onAppear(){
+//                                eng = words.eng
+//                            }
                             .frame(height:35)
                             .border(Color.black)
                             .multilineTextAlignment(.leading)
@@ -59,6 +66,11 @@ struct Word_Add_View: View {
                 //번역 버튼
                 HStack(alignment: .center){
                     Button("번역"){
+                        
+                        Task{
+                            
+                            eng = try await PapagoNetworkManager.shared.requestTranslate(sourceString: kor, target: "en")
+                        }
                         
                         
                     }
