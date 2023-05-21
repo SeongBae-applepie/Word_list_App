@@ -6,6 +6,8 @@
 //
 // https://github.com/realm/realm-swift.git - package add url
 
+// Realm을 이용해 저장기능 구현
+
 import Foundation
 import RealmSwift
 

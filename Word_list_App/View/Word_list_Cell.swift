@@ -5,6 +5,8 @@
 //  Created by 김성배 on 2023/05/16.
 //
 
+// list cell 디자인
+
 import SwiftUI
 
 struct Word_list_Cell: View {

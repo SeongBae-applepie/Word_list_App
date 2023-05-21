@@ -5,8 +5,9 @@
 //  Created by 김성배 on 2023/05/16.
 //
 
-//https://velog.io/@gkals4417/CanWeTalk-Network1 - 차고 사이트
+// https://velog.io/@gkals4417/CanWeTalk-Network1 - 차고 사이트
 
+// 파파고 naver api 사용 swift 파일
 
 import Foundation
 
@@ -66,7 +67,8 @@ final class PapagoNetworkManager: ObservableObject {
     }
     
 
-    // MARK: - Message
+    // MARK: - 데이터를 받아오는 구조
+    
     struct Message: Decodable {
         let type, service, version: String
         let result: Result

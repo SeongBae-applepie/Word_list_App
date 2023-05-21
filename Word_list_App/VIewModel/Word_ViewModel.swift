@@ -1,16 +1,18 @@
 //
 //  Word_ViewModel.swift
 //  Word_list_App
-//
-//  Created by 김성배 on 2023/05/16.
-//
+// MVMV 중 VM 뷰모델 - 리스트를 추가 삭제 관리해주는 뷰모델
 
 import SwiftUI
+import RealmSwift
 
 class Word_ViewModel: ObservableObject {
     
+    // 모든 뷰에서 관여할 수 있는 리스트
     @Published var Words_Array : [Words] = Array(Words.findAll())
     
+    
+    // 단어를 추가하는 함수
     func words_add(kor : String, eng : String) -> Void{
         guard !kor.isEmpty else { return }
         guard !eng.isEmpty else { return }
@@ -21,13 +23,8 @@ class Word_ViewModel: ObservableObject {
         Words.Words_add(words: words)
     }
     
-    func words_delete ( words : Words){
-        
-        Words.Words_del(words: words)
-        self.Words_Array = Array(Words.findAll())
-        
-    }
     
+    //단어를 삭제하는 함수
     func delete (set: IndexSet){
         for index in set {
             let word = Words_Array[index]
@@ -36,8 +33,7 @@ class Word_ViewModel: ObservableObject {
         }
     }
     
-    
-    
+    //단어를 수정하는 함수
     func words_edit(old: Words, kor: String, eng:String) -> Void{
         guard !kor.isEmpty else { return }
         guard !eng.isEmpty else { return }
@@ -45,12 +41,10 @@ class Word_ViewModel: ObservableObject {
         
     }
     
-    
-//    func words_update(){
+//
+//    func words_update() -> Void {
 //        self.Words_Array = Array(Words.findAll())
 //    }
-//    
-//    
     
     
 }

@@ -9,20 +9,23 @@ import SwiftUI
 
 struct Word_Detail_View: View {
     
+    //리스트 값
     @EnvironmentObject var Word_View_Model: Word_ViewModel
     
+    //에딧버튼 부울값 부모 함수와 소통
     @State private var shoewComposer : Bool = false
     
-    @State private var showDeleteAlert : Bool = false
-    
+    //삭제 버튼 부울값
+    //@State private var showDeleteAlert : Bool = false
+
+    // dismiss 화면 나가기 함수
     @Environment(\.dismiss) var dismiss
     
-    var words : Words
+    // 단어객체
+    @StateObject var words : Words
+
     
-    init(_ words: Words){
-        self.words = words
-        
-    }
+   
     
     var body: some View {
         VStack{
@@ -56,28 +59,35 @@ struct Word_Detail_View: View {
             
             .toolbar{
                 
-                //delete
-                ToolbarItemGroup(placement: .bottomBar){
-                    
-                    Button{
-                        
-                        showDeleteAlert = true
-                        
-                    }label: {
-                        Image(systemName: "trash")
-                    }.alert("삭제확인 ?" , isPresented: $showDeleteAlert){
-                        Button(role: .destructive){
-                            Word_View_Model.words_delete(words: words)
-                            dismiss()
-                        }label: {
-                            Text("삭제")
-                        }
-                        
-                    } message: {
-                        Text("삭제 할까요?")
-                    }
-                    
-                }
+                //realm+swiftui 구조로 불가능으로 판단. -> coredata를 사용으로 바꿀예정
+                
+//                //delete
+//                ToolbarItemGroup(placement: .bottomBar){
+//
+//                    Button{
+//
+//                        showDeleteAlert = true
+//
+//                    }label: {
+//                        Image(systemName: "trash")
+//                    }.alert("삭제확인 ?" , isPresented: $showDeleteAlert){
+//                        Button(role: .destructive){
+//                            dismiss()
+//
+//                            Word_View_Model.words_delete(words: words)
+//                            Word_View_Model.Words_Array.removeAll()
+//                            Word_View_Model.words_update()
+//
+//
+//                        }label: {
+//                            Text("삭제")
+//                        }
+//
+//                    } message: {
+//                        Text("삭제 할까요?")
+//                    }
+//
+//                }
                 
                 //edit
                 ToolbarItemGroup(placement: .bottomBar){
@@ -102,6 +112,6 @@ struct Word_Detail_View: View {
 
 struct Word_Detail_View_Previews: PreviewProvider {
     static var previews: some View {
-        Word_Detail_View(Words()).environmentObject(Word_ViewModel())
+        Word_Detail_View(words:Words()).environmentObject(Word_ViewModel())
     }
 }

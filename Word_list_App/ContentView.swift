@@ -11,21 +11,23 @@ import RealmSwift
 
 struct ContentView: View {
     
+    //메인뷰
+    
     @EnvironmentObject var Word_View_Model: Word_ViewModel //뷰간 데이터 공유
     
     @State private var showComposer : Bool = false;
-    
     
     var body: some View {
         
         NavigationView{
             List {
-                ForEach(Word_View_Model.Words_Array){
+                ForEach( Word_View_Model.Words_Array ){
                     word in
                     
                     NavigationLink{
                         
-                        Word_Detail_View(word)
+                        Word_Detail_View( words: word)
+                        //self.Word_View_Model.Words_Array = Array(Words.findAll())
                         
                     } label: {
                         

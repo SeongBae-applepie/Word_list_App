@@ -65,9 +65,11 @@ struct Word_Edit_View: View {
                     Button("번역"){
                         Task{
                             
+                            //파파고번역
                             eng = try await PapagoNetworkManager.shared.requestTranslate(sourceString: kor, target: "en")
                             
                         }
+
                         
                     }
                     .padding()
@@ -115,3 +117,4 @@ struct Word_Edit_View_Previews: PreviewProvider {
         Word_Edit_View(Words()).environmentObject(Word_ViewModel())
     }
 }
+
