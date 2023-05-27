@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct Word_list_AppApp: App {
     
-//    @StateObject var Word_View_Model = Word_ViewModel(Words_Array: Array(Words.findAll()))
-    @StateObject var Word_View_Model = Word_ViewModel()
+
+    @StateObject var Word_View_Model = Word_ViewModel(Words_Array: Array(Words.findAll()))
+    
+    
     
     var body: some Scene {
         WindowGroup {

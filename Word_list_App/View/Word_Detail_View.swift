@@ -16,7 +16,7 @@ struct Word_Detail_View: View {
     @State private var shoewComposer : Bool = false
     
     //삭제 버튼 부울값
-    //@State private var showDeleteAlert : Bool = false
+    @State private var showDeleteAlert : Bool = false
 
     // dismiss 화면 나가기 함수
     @Environment(\.dismiss) var dismiss
@@ -61,7 +61,7 @@ struct Word_Detail_View: View {
                 
                 //realm+swiftui 구조로 불가능으로 판단. -> coredata를 사용으로 바꿀예정
                 
-//                //delete
+                //delete
 //                ToolbarItemGroup(placement: .bottomBar){
 //
 //                    Button{
@@ -73,12 +73,9 @@ struct Word_Detail_View: View {
 //                    }.alert("삭제확인 ?" , isPresented: $showDeleteAlert){
 //                        Button(role: .destructive){
 //                            dismiss()
-//
-//                            Word_View_Model.words_delete(words: words)
-//                            Word_View_Model.Words_Array.removeAll()
-//                            Word_View_Model.words_update()
-//
-//
+//                            self.Word_View_Model.Words_Array.removeAll()
+//                            Word_View_Model.delete_edit(word: words)
+//                            self.Word_View_Model.Words_Array = Array(Words.findAll())
 //                        }label: {
 //                            Text("삭제")
 //                        }
@@ -112,6 +109,6 @@ struct Word_Detail_View: View {
 
 struct Word_Detail_View_Previews: PreviewProvider {
     static var previews: some View {
-        Word_Detail_View(words:Words()).environmentObject(Word_ViewModel())
+        Word_Detail_View(words:Words()).environmentObject(Word_ViewModel(Words_Array: Array(Words.findAll())))
     }
 }

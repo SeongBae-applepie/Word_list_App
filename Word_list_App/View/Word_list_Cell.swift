@@ -5,7 +5,7 @@
 //  Created by 김성배 on 2023/05/16.
 //
 
-// list cell 디자인
+// list-Cell 디자인
 
 import SwiftUI
 
@@ -13,13 +13,16 @@ struct Word_list_Cell: View {
     
     var words : Words
     
+    //함수생성시 words 설정
     init(_ words : Words) {
         self.words = words
     }
     
     
     var body: some View {
+        
         VStack(alignment: .leading){
+            
             Text(words.kor)
                 .bold().font(.body).lineLimit(1)
 

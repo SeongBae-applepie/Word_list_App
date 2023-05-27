@@ -24,9 +24,11 @@ final class PapagoNetworkManager: ObservableObject {
         
         var E_sourceString = sourceString
         
+        //클라이언트 아이디 및 패스워드 - 네이버 api에서 발급
         let clientID = "DB8mQIh8dsji2i0ttKeQ"
         let clinetSecret = "Ohs6WGrJC6"
         
+        //값이 없을 떄 오류 방지
         if (E_sourceString == nil || E_sourceString == ""){
             E_sourceString = "..."
         }
@@ -67,7 +69,7 @@ final class PapagoNetworkManager: ObservableObject {
     }
     
 
-    // MARK: - 데이터를 받아오는 구조
+    //데이터를 받아오는 구조
     
     struct Message: Decodable {
         let type, service, version: String

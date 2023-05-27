@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import RealmSwift
+import UserNotifications
 
 struct ContentView: View {
     
@@ -16,7 +17,7 @@ struct ContentView: View {
     @EnvironmentObject var Word_View_Model: Word_ViewModel //뷰간 데이터 공유
     
     @State private var showComposer : Bool = false;
-    
+
     var body: some View {
         
         NavigationView{
@@ -27,9 +28,10 @@ struct ContentView: View {
                     NavigationLink{
                         
                         Word_Detail_View( words: word)
+                        
                         //self.Word_View_Model.Words_Array = Array(Words.findAll())
                         
-                    } label: {
+                    }label: {
                         
                         Word_list_Cell(word)
                         
@@ -60,6 +62,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Word_ViewModel())
+        ContentView().environmentObject(Word_ViewModel(Words_Array: Array(Words.findAll())))
     }
 }

@@ -114,7 +114,7 @@ struct Word_Edit_View: View {
 
 struct Word_Edit_View_Previews: PreviewProvider {
     static var previews: some View {
-        Word_Edit_View(Words()).environmentObject(Word_ViewModel())
+        Word_Edit_View(Words()).environmentObject(Word_ViewModel(Words_Array: Array(Words.findAll())))
     }
 }
 

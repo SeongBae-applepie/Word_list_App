@@ -20,6 +20,7 @@
 		0C618DA12A138C8200A6D186 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C618DA02A138C8200A6D186 /* RealmSwift */; };
 		0C618DA32A138CC800A6D186 /* Word_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */; };
 		0C618DA52A1396C700A6D186 /* PapagoNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C618DA42A1396C700A6D186 /* PapagoNetworkManager.swift */; };
+		0CCAAA412A20F79D00EA0415 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCAAA402A20F79D00EA0415 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0C618D9B2A138C3B00A6D186 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ViewModel.swift; sourceTree = "<group>"; };
 		0C618DA42A1396C700A6D186 /* PapagoNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoNetworkManager.swift; sourceTree = "<group>"; };
+		0CCAAA402A20F79D00EA0415 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				0C618DA22A138CC800A6D186 /* Word_ViewModel.swift */,
 				0C618DA42A1396C700A6D186 /* PapagoNetworkManager.swift */,
+				0CCAAA402A20F79D00EA0415 /* LocalNotificationManager.swift */,
 			);
 			path = VIewModel;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				0C618D942A138BAC00A6D186 /* Word_list_Cell.swift in Sources */,
 				0C618DA32A138CC800A6D186 /* Word_ViewModel.swift in Sources */,
+				0CCAAA412A20F79D00EA0415 /* LocalNotificationManager.swift in Sources */,
 				0C618D9A2A138BFA00A6D186 /* Word_Edit_View.swift in Sources */,
 				0C618D962A138BD800A6D186 /* Word_Detail_View.swift in Sources */,
 				0C618DA52A1396C700A6D186 /* PapagoNetworkManager.swift in Sources */,

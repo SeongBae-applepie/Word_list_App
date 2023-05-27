@@ -11,13 +11,29 @@ struct Word_Add_View: View {
     
     @EnvironmentObject var Word_View_Model: Word_ViewModel
     
+    // add kor, eng, date 값 설정
     @State private var kor : String = ""
     
     @State private var eng : String = ""
     
+    @State private var date : Date = Date();
+    
+    //화면이 지워질때 dissmiss 변수 설정
     @Environment(\.dismiss) var dissmiss
     
+    //localnotification 토글
+    @State private var someToggle = false
+    
+    
     var words = Words()
+    
+    //notification 설정 함수
+    func setNotification(kor: String, eng : String, date : Date) -> Void {
+        let manager = LocalNotificationManager(kor: kor, eng: eng, date: date)
+        manager.requestPermission()//퍼미션에 대한 여부 묻기
+        manager.schedule()//퍼미션여부에 대해서 실행
+        
+    }
     
     var body: some View {
         
@@ -72,7 +88,26 @@ struct Word_Add_View: View {
                     .padding()
                     .border(Color.black)
                 }
+                
+                //notification 토글
+                HStack{
+                    Spacer().frame(width: 120)
+          
+                    Toggle("알림 :",isOn: $someToggle)
+                        .onChange(of: someToggle){
+                            value in
+                            
+                            self.setNotification(kor: kor, eng: eng, date: date)
+                            
+                        }
+                     
+                    Spacer().frame(width: 120)
+                   
+                    
+                }
                 Spacer()
+                    
+                
             }
             .navigationTitle("New Word")
             .navigationBarTitleDisplayMode(.inline)
@@ -109,6 +144,6 @@ struct Word_Add_View: View {
 
 struct Word_Add_View_Previews: PreviewProvider {
     static var previews: some View {
-        Word_Add_View().environmentObject(Word_ViewModel())
+        Word_Add_View().environmentObject(Word_ViewModel(Words_Array: Array(Words.findAll())))
     }
 }
