@@ -15,13 +15,26 @@ struct Word_Edit_View: View {
     
     @State private var eng : String = ""
     
+    @State private var notie : Bool = false
+    
+    @State private var notie_c : Bool = false
+    
     @Environment(\.dismiss) var dissmiss
     
     var words : Words
     
+    func setNotification(kor: String, eng : String, date : Date) -> Void {
+        let manager = LocalNotificationManager(kor: kor, eng: eng, date: date)
+        manager.requestPermission()//퍼미션에 대한 여부 묻기
+        manager.schedule()//퍼미션여부에 대해서 실행
+        
+    }
+    
     init(_ words: Words) {
         self.words = words
     }
+   
+    
     
     var body: some View {
         
@@ -75,6 +88,24 @@ struct Word_Edit_View: View {
                     .padding()
                     .border(Color.black)
                 }
+                
+                //notification 토글
+                HStack{
+                    
+                    Spacer().frame(width: 120)
+                    
+                    Toggle("알림 :",isOn: $notie)
+                        .onAppear(){
+                            notie = words.notie
+                            notie_c = notie
+                        }
+
+                    Spacer().frame(width: 120)
+                    
+                    
+                }
+                
+                
                 Spacer()
             }
             .navigationTitle("New Word")
@@ -97,9 +128,21 @@ struct Word_Edit_View: View {
                 {
                     Button{
                         
-                        Word_View_Model.words_edit(old: words, kor: kor, eng: eng)
-                        Word_View_Model.Words_Array = Array(Words.findAll())
-                        dissmiss()
+                        
+                        if(notie_c == false && notie == true){ // notie 추가
+                            
+                            self.setNotification(kor: kor, eng: eng, date: Date())
+                            Word_View_Model.words_edit(old: words, kor: kor, eng: eng, notie: notie)
+                            
+                            Word_View_Model.Words_Array = Array(Words.findAll())
+                            dissmiss()
+                            
+                        
+                        }else if(notie_c == true && notie == false){ //notie 삭제
+                            self.
+                            
+                            
+                        }
                         
                     } label: {
                         Text("저장");

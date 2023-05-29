@@ -17,7 +17,7 @@ class Words : Object , Identifiable{
     @Persisted var kor : String = "" //한국어
     @Persisted var eng : String = "" // 영어
     @Persisted var id: UUID = UUID() // id 값 (고유 값을 분리하기 위해)
-    @Persisted var notie : Bool = false //Notification 토글
+    @Persisted var notie : Bool //Notification 토글
     @Persisted var date : Date //설정 날짜
 }
 
@@ -49,10 +49,11 @@ extension Words {
     }
     
     //값 변경
-    static func Words_edit ( old_Words : Words , kor : String, eng : String){
+    static func Words_edit ( old_Words : Words , kor : String, eng : String, notie:Bool){
         try! realm.write {
             old_Words.kor = kor
             old_Words.eng = eng
+            old_Words.notie = notie
         }
     }
     

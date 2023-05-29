@@ -17,12 +17,13 @@ class Word_ViewModel: ObservableObject {
     }
     
     // 단어를 추가하는 함수
-    func words_add(kor : String, eng : String) -> Void{
+    func words_add(kor : String, eng : String, notie : Bool) -> Void{
         guard !kor.isEmpty else { return }
         guard !eng.isEmpty else { return }
         let words = Words()
         words.kor = kor
         words.eng = eng
+        words.notie = notie
         self.Words_Array.append(words)
         Words.Words_add(words: words)
     }
@@ -43,10 +44,10 @@ class Word_ViewModel: ObservableObject {
     }
     
     //단어를 수정하는 함수
-    func words_edit(old: Words, kor: String, eng:String) -> Void{
+    func words_edit(old: Words, kor: String, eng:String, notie : Bool) -> Void{
         guard !kor.isEmpty else { return }
         guard !eng.isEmpty else { return }
-        Words.Words_edit(old_Words: old, kor: kor, eng: eng)
+        Words.Words_edit(old_Words: old, kor: kor, eng: eng, notie : notie)
         
     }
     

@@ -92,21 +92,16 @@ struct Word_Add_View: View {
                 //notification 토글
                 HStack{
                     Spacer().frame(width: 120)
-          
+                    
                     Toggle("알림 :",isOn: $someToggle)
-                        .onChange(of: someToggle){
-                            value in
-                            
-                            self.setNotification(kor: kor, eng: eng, date: date)
-                            
-                        }
-                     
+                    
+                    
                     Spacer().frame(width: 120)
-                   
+                    
                     
                 }
                 Spacer()
-                    
+                
                 
             }
             .navigationTitle("New Word")
@@ -128,7 +123,15 @@ struct Word_Add_View: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing)
                 {
                     Button{
-                        Word_View_Model.words_add(kor: kor, eng: eng)
+                        if (someToggle == true){
+                            Word_View_Model.words_add(kor: kor, eng: eng, notie: someToggle)
+                            self.setNotification(kor: kor, eng: eng, date: date)
+                            
+                        }else{
+                            Word_View_Model.words_add(kor: kor, eng: eng, notie: someToggle)
+                            
+                            
+                        }
                         dissmiss()
                         
                     } label: {
@@ -138,7 +141,7 @@ struct Word_Add_View: View {
             }
             Spacer()
         }
-     
+        
     }
 }
 
